@@ -1,13 +1,13 @@
 output "storage_account_name" {
-  value = azurerm_storage_blob.tfstate.storage_account_name
+  value = var.storage_account_name
 }
 
 output "storage_container_name" {
-  value = azurerm_storage_blob.tfstate.storage_container_name
+  value = var.storage_container_name
 }
 
 output "tfstate_blob_name" {
-  value = azurerm_storage_blob.tfstate.name
+  value = var.tfstate_blob_name
 }
 
 output "content_type" {
