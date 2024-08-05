@@ -1,30 +1,30 @@
-# terraform_module
-A template for creating Terraform modules that are sourced from GitHub.
+# azurerm_backend_tfstate_blob
+A Terraform module for initializing a tfstate storage blob.
 
-Provides a base set of files, as mentioned in [the Style Guide](https://developer.hashicorp.com/terraform/language/style#file-names).
+## Requirements
+The Principal using this module MUST have permissions for the following data actions
 
-All files are configured as close to local as possible.
+- Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read
+- Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write
 
 ## Example Usage
 ```shell
-PS F:\github\Zymus\commitments\public\terraform_module> tofu plan
-var.name
-  Enter a value: Reno
-
-
-Changes to Outputs:
-  + greeting = "Hello Reno"
 ```
 
 ## [main.tf](main.tf)
-Blank. Most of your Resources and Data Sources will go here, unless a more specialized place is appropriate. See the
-Style Guide for more details.
+Creates an Azure Storage Blob using the storage account, container,and  name provided in [the variables](variables.tf).
 
 ## [outputs.tf](outputs.tf)
-A simple greeting based on [the name variable](variables.tf).
+- [the storage_account_name](variables.tf#L1)
+- [the storage_container_name](variables.tf#L5)
+- [the resource_manager_id of the storage container](main.tf)
+
+## [providers.tf](providers.tf)
+azurerm provider. Blank features. Skips provider registration since it never seems to work.
 
 ## [terraform.tf](terraform.tf)
-Required providers.
+Requires hashicorp/azurerm, [3.114.0, 4).
 
 ## [variables.tf](variables.tf)
-Variables for the module. Just a simple name to start.
+- the storage_account_name
+- the storage_container_name
