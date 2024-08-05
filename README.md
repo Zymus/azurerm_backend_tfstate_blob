@@ -15,9 +15,9 @@ The Principal using this module MUST have permissions for the following data act
 Creates an Azure Storage Blob using the storage account, container,and name provided in [the variables](variables.tf).
 
 ## [outputs.tf](outputs.tf)
-- [the storage_account_name](variables.tf#L1)
-- [the storage_container_name](variables.tf#L5)
-- [the tfstate_blob_name](variables.tf#L9)
+- [the storage_account_name variable](variables.tf#L1)
+- [the storage_container_name variable](variables.tf#L5)
+- [the tfstate_blob_name variable](variables.tf#L9)
 
 ## [providers.tf](providers.tf)
 azurerm provider. Blank features. Skips provider registration since it never seems to work.
